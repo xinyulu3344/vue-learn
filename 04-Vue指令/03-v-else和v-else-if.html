@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <!--
+    作用：辅助v-if进行判断
+    语法：v-if="表达式" v-else-if="表达式" v-else
+    注意：需要紧挨着v-if一起使用
+  -->
+
+  <div id="app">
+    <p v-if="gender === 1">性别：男</p>
+    <p v-else>性别：女</p>
+
+    <hr>
+
+    <p v-if="score >= 90">送电脑</p>
+    <p v-else-if="score >= 80">送手机</p>
+    <p v-else-if="score >= 70">揍一顿</p>
+    <p v-else>丢了</p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        gender: 0,
+        score: 70,
+      }
+    })
+  </script>
+</body>
+</html>

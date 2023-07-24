@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>差值表达式</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+</head>
+<body>
+
+  <!--
+    插值表达式：Vue的一种模板语法
+    作用：利用 表达式 进行插值渲染
+    语法：{{ 表达式 }}
+
+    注意点：
+    1. 使用的数据要存在
+    2. 支持的是表达式，不是语句，例如if for是不支持的
+    3. 不能在属性中使用{{ }}
+  -->
+
+  <div id="app">
+    
+    <p>{{ nickName }}</p>
+    <p>{{ nickName.toUpperCase() }}</p>
+    <p>{{ nickName + '你好' }}</p>
+    <p>{{ age >= 18 ? '成年' : '未成年' }}</p>
+    <p>{{ friend.name }}</p>
+  </div>
+
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        nickName: 'tony',
+        age: 18,
+        friend: {
+          name: 'jepson',
+          desc: '热爱学习 Vue'
+        }
+      }
+    })
+  </script>
+</body>
+</html> 
