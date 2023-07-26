@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <button v-show="index > 0" @click="index--">上一页</button>
+    <div>
+      <h1>{{ list[index] }}</h1>
+    </div>
+    <button v-show="index < list.length - 1" @click="index++">下一页</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        index: 0,
+        list: ["我", "爱", "你", "中", "国"]
+      }
+    })
+  </script>
+</body>
+</html>
