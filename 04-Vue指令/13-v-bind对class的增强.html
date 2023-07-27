@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+</head>
+<body>
+
+  <div id="app">
+    <!-- 
+      作用：值为true的class生效，为false的class不生效
+      适用场景：一个类名来回切换
+    -->
+    <div class="box" :class="{ 类名1: true, 类名2: false }"></div>
+
+    <!-- 
+      作用：数组中的类名都生效
+      适用场景：批量添加或删除类
+    -->
+    <div class="box" :class="[ 类名1, 类名2, 类名3 ]"></div>
+  </div>
+
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+      }
+    })
+  </script>
+</body>
+</html>
